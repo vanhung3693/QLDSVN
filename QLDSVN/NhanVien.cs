@@ -6,11 +6,6 @@ using System.Threading.Tasks;
 
 namespace QLDSVN
 {
-    public interface INhanVien
-    {
-        void XuatThongTinNhanVien();
-        void XuatThongTinNhanVien(NhanVien nhanVien);
-    }
     //lop nhan vien co tinh dong goi la public, tinh ke thua la lop nhan vien duoc ke thua thuoc tinh tu lop nguoi
     public class NhanVien : Nguoi, INhanVien
     {
