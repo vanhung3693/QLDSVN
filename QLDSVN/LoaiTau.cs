@@ -34,7 +34,7 @@ namespace QLDSVN
                 case "1":
                     foreach (var maTauCoDien in Enum.GetNames(typeof(Enums.TauDieselCoDien)))//chay vong lap gan tung gia tri trong vong lap
                     {
-                        Console.WriteLine(maTauCoDien);
+                        Console.WriteLine(maTauCoDien);//in tung gia tri ra man hinh
                     }
                     Console.Write("Nhap Ma Tau: ");
                     loaiTau.Loai = "Tau Diesel Co Dien (" + Console.ReadLine() + ")";

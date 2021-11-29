@@ -11,7 +11,7 @@ namespace QLDSVN
     {
         public enum TauDieselCoDien
         {
-            D4H,
+            D04H,
             D10H,
             D11H
         }

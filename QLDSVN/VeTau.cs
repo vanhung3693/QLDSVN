@@ -23,53 +23,66 @@ namespace QLDSVN
         //public de co the truy cap tu ben ngoai vao
         public static void NhapThongTinVeTau()
         {
-            string loaiTauChon;
+            //string loaiTauChon;
             VeTau veTau = new VeTau();
 
             Console.WriteLine("\n ===> Nhap thong tin Ve Tau <==");
 
-            Console.WriteLine("Cac LoaiTau: ");
-            Console.WriteLine("1. Tau Diesel Co Dien ");
-            Console.WriteLine("2. Tau Diesel Truyen Dong Dien ");
-            Console.Write("ChonLoaiTau: ");
-            loaiTauChon = Console.ReadLine();
+            Console.Write("Nhap Ma Ve Tau (LoaiVe,ToaNgoi,LoaiTau - VIP002D12E): ");
+            veTau.MaVeTau = Console.ReadLine();
 
-            switch (loaiTauChon)
+            string loaitau;
+            //tim loai ve tau
+            if (veTau.MaVeTau.Contains("VIP"))//tim ton tai trong chuoi
             {
-                case "1":
-                    foreach (var maTauCoDien in Enum.GetNames(typeof(Enums.TauDieselCoDien)))
-                    {
-                        Console.WriteLine(maTauCoDien);
-                    }
-                    Console.Write("Nhap Ma Tau: ");
-                    veTau.LoaiTau = "Tau Diesel Co Dien (" + Console.ReadLine() + ")";
-                    break;
-                case "2":
-                    foreach (var maTauTruyenDong in Enum.GetNames(typeof(Enums.TauDieselTruyenDongDien)))
-                    {
-                        Console.WriteLine(maTauTruyenDong);
-                    }
-                    Console.Write("Nhap Ma Tau: ");
-                    veTau.LoaiTau = "Tau Diesel Truyen Dong Dien (" + Console.ReadLine() + ")";
-                    break;
+                veTau.LoaiVe = "VIP";
+                veTau.DichVu = "An Uong, Ve Sinh, Wifi, Dieu Hoa";
+                //lay vi tri toa ngoi
+                veTau.ToaNgoi = veTau.MaVeTau.Substring(3, 3);//cat 3 ky tu bat dau tu vi tri so 3
+
+                //lay ma tau
+                loaitau = veTau.MaVeTau.Substring(veTau.MaVeTau.Length - 4, 4);//cat 3 ky tu cuoi cung
+
+                //kiem tra ton tai trong enum
+                if (Enum.IsDefined(typeof(Enums.TauDieselCoDien), loaitau))//lay ra loai tau tu ma loai tau
+                {
+                    veTau.LoaiTau = "Tau Diesel Co Dien (" + loaitau + ")";
+                }
+                else
+                {
+                    veTau.LoaiTau = "Tau Diesel Truyen Dong Dien (" + loaitau + ")";
+                }
+            }
+            
+            //kiem tra ton tai trong chuoi
+            else if (veTau.MaVeTau.Contains("NORMAL"))
+            {
+                veTau.LoaiVe = "NORMAL";
+                veTau.DichVu = "An Uong, Ve Sinh";
+                //lay vi tri toa ngoi
+                veTau.ToaNgoi = veTau.MaVeTau.Substring(6, 3);
+
+                //lay ma tau
+                loaitau = veTau.MaVeTau.Substring(veTau.MaVeTau.Length - 4, 4);
+
+                if (Enum.IsDefined(typeof(Enums.TauDieselCoDien), loaitau))
+                {
+                    veTau.LoaiTau = "Tau Diesel Co Dien (" + loaitau + ")"; 
+                }
+                else
+                {
+                    veTau.LoaiTau = "Tau Diesel Truyen Dong Dien (" + loaitau + ")";
+                }
             }
 
-            Console.Write("Nhap Ma Ve Tau: ");
-            veTau.MaVeTau = Console.ReadLine();
             Console.Write("Nhap Ma Chuyen Tau: ");
             veTau.MaChuyenTau = Console.ReadLine();
             Console.Write("Nhap Gia Ve: ");
             veTau.GiaVe = double.Parse(Console.ReadLine());
             Console.Write("Nhap Gio Khoi Hanh dd/MM/yyyy: ");
             veTau.GioKhoiHanh = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            Console.Write("Nhap Loai Ve: ");
-            veTau.LoaiVe = Console.ReadLine();
             Console.Write("Nhap Cho Ngoi: ");
             veTau.ChoNgoi = Console.ReadLine();
-            Console.Write("Nhap Toa Ngoi: ");
-            veTau.ToaNgoi = Console.ReadLine();
-            Console.Write("Nhap Dich Vu: ");
-            veTau.DichVu = Console.ReadLine();
             Console.Write("Nhap Ho Ten Khach Hang: ");
             veTau.HoTenKhachHang = Console.ReadLine();
             Console.Write("Nhap CMND: ");
