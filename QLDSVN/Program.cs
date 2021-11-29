@@ -14,6 +14,8 @@ namespace QLDSVN
             Console.WriteLine("===> HE THONG QUAN LY DUONG SAT VIET NAM <=== \n");
             Console.WriteLine("1. Chuc Nang Quan Ly Nhan Vien");
             Console.WriteLine("2. Chuc Nang Quan Ly Cac Loai Tau");
+            Console.WriteLine("3. Chuc Nang Quan Ly Chuyen Tau");
+            Console.WriteLine("4. Chuc Nang Quan Ly Ve Tau");
             Console.Write("Moi Ban Nhap Chuc Nang Tuong Ung: ");
             chucNang = Console.ReadLine();
             switch (chucNang)
@@ -23,6 +25,12 @@ namespace QLDSVN
                     break;
                 case "2":
                     NhapThongTinLoaiTau();
+                    break;
+                case "3":
+                    NhapThongTinChuyenTau();
+                    break;
+                case "4":
+                    NhapThongTinVeTau();
                     break;
             }
 
@@ -40,7 +48,7 @@ namespace QLDSVN
                     Environment.Exit(0);
                     break;
             }
-            
+
             Console.ReadKey();
 
         }
@@ -122,5 +130,104 @@ namespace QLDSVN
             //xuat thong tin
             loaiTau.XuatThongTinTau(loaiTau);
         }
+
+        static void NhapThongTinChuyenTau()
+        {
+            string loaiTauChon;
+            ChuyenTau chuyenTau = new ChuyenTau();
+
+            Console.WriteLine("\n ===> Nhap thong tin Chuyen Tau <==");
+
+            Console.WriteLine("Cac LoaiTau: ");
+            Console.WriteLine("1. Tau Diesel Co Dien ");
+            Console.WriteLine("2. Tau Diesel Truyen Dong Dien ");
+            Console.Write("ChonLoaiTau: ");
+            loaiTauChon = Console.ReadLine();
+
+            switch (loaiTauChon)
+            {
+                case "1":
+                    foreach (var maTauCoDien in Enum.GetNames(typeof(Enums.TauDieselCoDien)))
+                    {
+                        Console.WriteLine(maTauCoDien);
+                    }
+                    Console.Write("Nhap Ma Tau: ");
+                    chuyenTau.Loai = "Tau Diesel Co Dien (" + Console.ReadLine() + ")";
+                    break;
+                case "2":
+                    foreach (var maTauTruyenDong in Enum.GetNames(typeof(Enums.TauDieselTruyenDongDien)))
+                    {
+                        Console.WriteLine(maTauTruyenDong);
+                    }
+                    Console.Write("Nhap Ma Tau: ");
+                    chuyenTau.Loai = "Tau Diesel Truyen Dong Dien (" + Console.ReadLine() + ")";
+                    break;
+            }
+
+            Console.Write("Nhap Ma Chuyen Tau: ");
+            chuyenTau.MaChuyenTau = Console.ReadLine();
+            Console.Write("Nhap So luong Hanh khach Toi Da: ");
+            chuyenTau.SoluongHanhKhachToiDa = double.Parse(Console.ReadLine());
+            Console.Write("Nhap Gio Khoi Hanh dd/MM/yyyy: ");
+            chuyenTau.GioKhoiHanh = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+            chuyenTau.XuatThongTin(chuyenTau);
+        }
+
+        static void NhapThongTinVeTau()
+        {
+            string loaiTauChon;
+            VeTau veTau = new VeTau();
+
+            Console.WriteLine("\n ===> Nhap thong tin Ve Tau <==");
+
+            Console.WriteLine("Cac LoaiTau: ");
+            Console.WriteLine("1. Tau Diesel Co Dien ");
+            Console.WriteLine("2. Tau Diesel Truyen Dong Dien ");
+            Console.Write("ChonLoaiTau: ");
+            loaiTauChon = Console.ReadLine();
+
+            switch (loaiTauChon)
+            {
+                case "1":
+                    foreach (var maTauCoDien in Enum.GetNames(typeof(Enums.TauDieselCoDien)))
+                    {
+                        Console.WriteLine(maTauCoDien);
+                    }
+                    Console.Write("Nhap Ma Tau: ");
+                    veTau.LoaiTau = "Tau Diesel Co Dien (" + Console.ReadLine() + ")";
+                    break;
+                case "2":
+                    foreach (var maTauTruyenDong in Enum.GetNames(typeof(Enums.TauDieselTruyenDongDien)))
+                    {
+                        Console.WriteLine(maTauTruyenDong);
+                    }
+                    Console.Write("Nhap Ma Tau: ");
+                    veTau.LoaiTau = "Tau Diesel Truyen Dong Dien (" + Console.ReadLine() + ")";
+                    break;
+            }
+
+            Console.Write("Nhap Ma Ve Tau: ");
+            veTau.MaVeTau = Console.ReadLine();
+            Console.Write("Nhap Ma Chuyen Tau: ");
+            veTau.MaChuyenTau = Console.ReadLine();
+            Console.Write("Nhap Gia Ve: ");
+            veTau.GiaVe = double.Parse(Console.ReadLine());
+            Console.Write("Nhap Gio Khoi Hanh: ");
+            veTau.GioKhoiHanh = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            Console.Write("Nhap Loai Ve: ");
+            veTau.LoaiVe = Console.ReadLine();
+            Console.Write("Nhap Cho Ngoi: ");
+            veTau.ChoNgoi = Console.ReadLine();
+            Console.Write("Nhap Toa Ngoi: ");
+            veTau.ToaNgoi = Console.ReadLine();
+            Console.Write("Nhap Ho Ten Khach Hang: ");
+            veTau.HoTenKhachHang = Console.ReadLine();
+            Console.Write("Nhap CMND: ");
+            veTau.CMND = Console.ReadLine();
+
+            veTau.XuatThongTin(veTau);
+        }
+
     }
 }
