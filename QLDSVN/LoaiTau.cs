@@ -32,7 +32,7 @@ namespace QLDSVN
             switch (loaiTauChon)
             {
                 case "1":
-                    foreach (var maTauCoDien in Enum.GetNames(typeof(Enums.TauDieselCoDien)))
+                    foreach (var maTauCoDien in Enum.GetNames(typeof(Enums.TauDieselCoDien)))//chay vong lap gan tung gia tri trong vong lap
                     {
                         Console.WriteLine(maTauCoDien);
                     }

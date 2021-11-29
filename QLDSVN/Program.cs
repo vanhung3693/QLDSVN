@@ -14,15 +14,15 @@ namespace QLDSVN
             string chucNang;
 
             //IN RA MAN HINH
-            Console.WriteLine("===> HE THONG QUAN LY DUONG SAT VIET NAM <=== \n");
+            Console.WriteLine("===> HE THONG QUAN LY DUONG SAT VIET NAM <=== \n");//inra xuong dong
             Console.WriteLine("1. Chuc Nang Quan Ly Nhan Vien");
             Console.WriteLine("2. Chuc Nang Quan Ly Cac Loai Tau");
             Console.WriteLine("3. Chuc Nang Quan Ly Chuyen Tau");
             Console.WriteLine("4. Chuc Nang Quan Ly Ve Tau");
             Console.WriteLine("5. Chuc Nang Quan Ly Doanh Thu");
-            Console.Write("Moi Ban Nhap Chuc Nang Tuong Ung: ");
-            chucNang = Console.ReadLine();
-            switch (chucNang)
+            Console.Write("Moi Ban Nhap Chuc Nang Tuong Ung: ");//inra khong xuong dong
+            chucNang = Console.ReadLine();//lay gia tri nhap vao man hinh sau khi enter
+            switch (chucNang)//chon
             {
                 case "1":
                     NhanVien.NhapThongTinNhanVien();
@@ -49,10 +49,10 @@ namespace QLDSVN
             switch (refresh)
             {
                 case "1":
-                    Main(new String[] { });
+                    Main(new String[] { });//goi lai chuong trinh
                     break;
                 case "2":
-                    Environment.Exit(0);
+                    Environment.Exit(0);//thoat chuong trinh
                     break;
             }
 
