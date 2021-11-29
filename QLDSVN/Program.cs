@@ -26,8 +26,22 @@ namespace QLDSVN
                     break;
             }
 
-            Console.ReadKey();
+            Console.WriteLine("1. Tro Ve Ban Dau");
+            Console.WriteLine("2. Thoat");
 
+            String refresh = Console.ReadLine();
+
+            switch (refresh)
+            {
+                case "1":
+                    Main(new String[] { });
+                    break;
+                case "2":
+                    Environment.Exit(0);
+                    break;
+            }
+            
+            Console.ReadKey();
 
         }
 
