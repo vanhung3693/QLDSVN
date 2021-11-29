@@ -38,7 +38,7 @@ namespace QLDSVN
                     break;
             }
 
-            Console.WriteLine("1. Tro Ve Ban Dau");
+            Console.WriteLine("\n 1. Tro Ve Ban Dau");
             Console.WriteLine("2. Thoat");
 
             String refresh = Console.ReadLine();

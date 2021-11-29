@@ -10,9 +10,9 @@ namespace QLDSVN
     public class NhanVien : Nguoi, INhanVien
     {
         //ThuocTinh tu dong implement
-        public string MaNhanVien { get; set;}    
-        public string ChucVu { get; set; }
-        public double Luong { get;set; }
+        string MaNhanVien { get; set;}    
+        string ChucVu { get; set; }
+        double Luong { get;set; }
 
         //Phuong thuc khoi tao mac dinh
         public NhanVien()
