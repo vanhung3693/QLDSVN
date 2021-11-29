@@ -10,7 +10,10 @@ namespace QLDSVN
     {
         static void Main(string[] args)
         {
+            //KHAI BAO BIEN
             string chucNang;
+
+            //IN RA MAN HINH
             Console.WriteLine("===> HE THONG QUAN LY DUONG SAT VIET NAM <=== \n");
             Console.WriteLine("1. Chuc Nang Quan Ly Nhan Vien");
             Console.WriteLine("2. Chuc Nang Quan Ly Cac Loai Tau");
