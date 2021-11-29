@@ -15,6 +15,7 @@ namespace QLDSVN
         public string LoaiVe { get; set; }
         public string ChoNgoi { get; set; }
         public string ToaNgoi { get; set; }
+        public string DichVu { get; set; }
         public string HoTenKhachHang { get; set; }
         public string CMND { get; set; }
 
@@ -29,6 +30,7 @@ namespace QLDSVN
             Console.WriteLine("Loai Ve: " + veTau.LoaiVe);
             Console.WriteLine("Cho Ngoi: " + veTau.ChoNgoi);
             Console.WriteLine("Toa Ngoi: " + veTau.ToaNgoi);
+            Console.WriteLine("Dich Vu: " + veTau.DichVu);
             Console.WriteLine("Ho Ten Khach Hang: " + veTau.HoTenKhachHang);
             Console.WriteLine("CMND: " + veTau.CMND);
         }

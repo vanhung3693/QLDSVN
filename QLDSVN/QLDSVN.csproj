@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="ChayChucNang.cs" />
     <Compile Include="ChuyenTau.cs" />
+    <Compile Include="DoanhThu.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="INhanVien.cs" />
     <Compile Include="LoaiTau.cs" />

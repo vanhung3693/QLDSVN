@@ -16,6 +16,7 @@ namespace QLDSVN
             Console.WriteLine("2. Chuc Nang Quan Ly Cac Loai Tau");
             Console.WriteLine("3. Chuc Nang Quan Ly Chuyen Tau");
             Console.WriteLine("4. Chuc Nang Quan Ly Ve Tau");
+            Console.WriteLine("5. Chuc Nang Quan Ly Doanh Thu");
             Console.Write("Moi Ban Nhap Chuc Nang Tuong Ung: ");
             chucNang = Console.ReadLine();
             switch (chucNang)
@@ -31,6 +32,9 @@ namespace QLDSVN
                     break;
                 case "4":
                     NhapThongTinVeTau();
+                    break;
+                case "5":
+                    NhapThongTinDoanhThu();
                     break;
             }
 
@@ -213,20 +217,35 @@ namespace QLDSVN
             veTau.MaChuyenTau = Console.ReadLine();
             Console.Write("Nhap Gia Ve: ");
             veTau.GiaVe = double.Parse(Console.ReadLine());
-            Console.Write("Nhap Gio Khoi Hanh: ");
+            Console.Write("Nhap Gio Khoi Hanh dd/MM/yyyy: ");
             veTau.GioKhoiHanh = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             Console.Write("Nhap Loai Ve: ");
             veTau.LoaiVe = Console.ReadLine();
             Console.Write("Nhap Cho Ngoi: ");
             veTau.ChoNgoi = Console.ReadLine();
             Console.Write("Nhap Toa Ngoi: ");
-            veTau.ToaNgoi = Console.ReadLine();
+            veTau.ToaNgoi = Console.ReadLine();            
+            Console.Write("Nhap Dich Vu: ");
+            veTau.DichVu = Console.ReadLine();
             Console.Write("Nhap Ho Ten Khach Hang: ");
             veTau.HoTenKhachHang = Console.ReadLine();
             Console.Write("Nhap CMND: ");
             veTau.CMND = Console.ReadLine();
 
             veTau.XuatThongTin(veTau);
+        }
+        static void NhapThongTinDoanhThu()
+        {
+            DoanhThu doanhThu = new DoanhThu();
+            Console.WriteLine("\n ===> Nhap thong tin Doanh Thu <==");
+            Console.Write("Nhap Doanh Thu Thang: ");
+            doanhThu.DoanhThuThang = double.Parse(Console.ReadLine());
+            Console.Write("Nhap Doanh Thu Quy: ");
+            doanhThu.DoanhThuQuy = double.Parse(Console.ReadLine());
+            Console.Write("Nhap Doanh Thu Nam: ");
+            doanhThu.DoanhThuNam = double.Parse(Console.ReadLine());
+
+            doanhThu.XuatThongTin(doanhThu);
         }
 
     }
