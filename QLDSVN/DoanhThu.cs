@@ -7,12 +7,26 @@ namespace QLDSVN
 {
     class DoanhThu
     {
-        public double DoanhThuThang { get; set; }
-        public double DoanhThuQuy { get; set; }
-        public double DoanhThuNam { get; set; }
+        double DoanhThuThang { get; set; }
+        double DoanhThuQuy { get; set; }
+        double DoanhThuNam { get; set; }
 
+        //public de co the truy cap tu ben ngoai vao
+        public static void NhapThongTinDoanhThu()
+        {
+            DoanhThu doanhThu = new DoanhThu();
+            Console.WriteLine("\n ===> Nhap thong tin Doanh Thu <==");
+            Console.Write("Nhap Doanh Thu Thang: ");
+            doanhThu.DoanhThuThang = double.Parse(Console.ReadLine());
+            Console.Write("Nhap Doanh Thu Quy: ");
+            doanhThu.DoanhThuQuy = double.Parse(Console.ReadLine());
+            Console.Write("Nhap Doanh Thu Nam: ");
+            doanhThu.DoanhThuNam = double.Parse(Console.ReadLine());
 
-        public void XuatThongTin(DoanhThu doanhThu)
+            doanhThu.XuatThongTin(doanhThu);
+        }
+
+        void XuatThongTin(DoanhThu doanhThu)
         {
             Console.WriteLine("\n ====> THONG TIN DOANH THU LA <==== \n");
             Console.WriteLine("Doanh Thu Thang: " + doanhThu.DoanhThuThang);
