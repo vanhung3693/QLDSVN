@@ -18,6 +18,7 @@ namespace QLDSVN
         public string DichVu { get; set; }
         public string HoTenKhachHang { get; set; }
         public string CMND { get; set; }
+        public string NgaySinh { get; set; }
 
         public void XuatThongTin(VeTau veTau)
         {
@@ -33,6 +34,7 @@ namespace QLDSVN
             Console.WriteLine("Dich Vu: " + veTau.DichVu);
             Console.WriteLine("Ho Ten Khach Hang: " + veTau.HoTenKhachHang);
             Console.WriteLine("CMND: " + veTau.CMND);
+            Console.WriteLine("Ngay Sinh: " + veTau.NgaySinh);
         }
     }
 }

@@ -230,7 +230,9 @@ namespace QLDSVN
             Console.Write("Nhap Ho Ten Khach Hang: ");
             veTau.HoTenKhachHang = Console.ReadLine();
             Console.Write("Nhap CMND: ");
-            veTau.CMND = Console.ReadLine();
+            veTau.CMND = Console.ReadLine();            
+            Console.Write("Nhap Ngay Sinh: ");
+            veTau.NgaySinh = Console.ReadLine();
 
             veTau.XuatThongTin(veTau);
         }
