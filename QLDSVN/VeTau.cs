@@ -17,7 +17,7 @@ namespace QLDSVN
         public string LoaiVe { get; set; }
         public string ChoNgoi { get; set; }
         public string ToaNgoi { get; set; }
-        string DichVu { get; set; }
+        public string DichVu { get; set; }
         public string HoTenKhachHang { get; set; }
         public string CMND { get; set; }
         string NgaySinh { get; set; }
