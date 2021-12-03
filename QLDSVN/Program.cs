@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,44 @@ namespace QLDSVN
                     ChuyenTau.NhapThongTinChuyenTau();
                     break;
                 case "4":
-                   VeTau.NhapThongTinVeTau();
+                    Console.WriteLine("\n ====> THONG TIN VE TAU DA NHAP LA <==== \n");
+                    List<VeTau> veTauLst = new List<VeTau>();
+
+                    string themVe;
+                    string xoaVe;
+
+                    do
+                    {
+                        VeTau veTau = VeTau.NhapThongTinVeTau();
+                        veTauLst.Add(veTau);
+                        Console.WriteLine("1. Them ve");
+                        Console.WriteLine("0. Xuat Danh Sach");
+                        themVe = Console.ReadLine();
+                    }
+                    while (themVe != "0");
+
+                    Console.WriteLine("Danh Sach");
+                    DataTable dataTables = veTauLst.ToDataTable();
+                    dataTables.Print();
+
+                    Console.WriteLine("1. Xoa ve");
+                    Console.WriteLine("0. Thoat");
+                    xoaVe = Console.ReadLine();
+
+                    do
+                    {
+                        Console.WriteLine("1. Nhap Ma ve: ");
+                        string mave = Console.ReadLine();
+                        VeTau veTauMove = veTauLst.Find(x => x.MaVeTau == mave);
+                        veTauLst.Remove(veTauMove);
+                        DataTable dataTablesNew = veTauLst.ToDataTable();
+                        dataTablesNew.Print();
+                        Console.WriteLine("1. Xoa ve");
+                        Console.WriteLine("0. Thoat");
+                        xoaVe = Console.ReadLine();
+                    }
+                    while (xoaVe != "0");
+
                     break;
                 case "5":
                     DoanhThu.NhapThongTinDoanhThu();
