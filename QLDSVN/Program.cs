@@ -36,6 +36,7 @@ namespace QLDSVN
                     break;
                 case "4":
                     Console.WriteLine("\n ====> THONG TIN VE TAU DA NHAP LA <==== \n");
+                    //tao doi tuong kieu du lieu la danh sach
                     List<VeTau> veTauLst = new List<VeTau>();
 
                     string themVe;
@@ -44,6 +45,7 @@ namespace QLDSVN
                     do
                     {
                         VeTau veTau = VeTau.NhapThongTinVeTau();
+                        //them doi tuong vao danh sach 
                         veTauLst.Add(veTau);
                         Console.WriteLine("1. Them ve");
                         Console.WriteLine("0. Xuat Danh Sach");
@@ -63,6 +65,7 @@ namespace QLDSVN
                     {
                         Console.WriteLine("1. Nhap Ma ve: ");
                         string mave = Console.ReadLine();
+                        //tim kiem trong linq
                         VeTau veTauMove = veTauLst.Find(x => x.MaVeTau == mave);
                         veTauLst.Remove(veTauMove);
                         DataTable dataTablesNew = veTauLst.ToDataTable();
